@@ -27,7 +27,8 @@
 	</ul>
 	<ul>
 		<li><a href="account">Ajax @Controller Example</a></li>
-		<li><a href="responsive">Responsive page</a></li>
+		<li><a href="responsive/page">Responsive page</a></li>
+		<li><a href="responsive/page2">Responsive page2</a></li>
 	</ul>
 </div>
 </body>

@@ -10,9 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/responsive")
 public class MiscController {
 
-    @RequestMapping(method= RequestMethod.GET)
+    @RequestMapping(value = "/page", method= RequestMethod.GET)
     public String responsivePage() {
         return "responsive/page";
+    }
+    @RequestMapping(value="/page2", method = RequestMethod.GET)
+    public String responsivePage2() {
+        return "responsive/page2";
     }
 
 }
