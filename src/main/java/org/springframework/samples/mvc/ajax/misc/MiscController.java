@@ -18,9 +18,9 @@ public class MiscController {
     public String responsivePage2() {
         return "responsive/page2";
     }
-    @RequestMapping(value="/backboneajax", method = RequestMethod.GET)
-    public String backboneajax() {
-        return "backbone-ajax/index";
+    @RequestMapping(value="/d3j", method = RequestMethod.GET)
+    public String d3j() {
+        return "d3j/index";
     }
 
 }
