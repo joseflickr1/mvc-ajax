@@ -22,15 +22,13 @@
 <body id="pg-welcome" class="">
 
 <section id="welcome">
-<div class="panel" id="cv">
-    <div class="container">
-
-        <div class="full"><h2>Joselito <em>Poblete</em> <span>JCP</span> </h2></div>
-        <div class="grid-container">
-
-
+    <div class="panel">
+    </div>
+    <div class="panel" id="team">
+        <div class="line"></div>
+        <div class="container" id="team-all">
             <div class="cv-item">
-                <a href="#" class="logo-container" title="Arbeidserfaring">
+                <a href="#experience" class="bio-trigger logo-container" title="Arbeidserfaring">
                     <div class="logo-frame">
                         <div class="overlay"></div>
                         <img class="logo-img" src="http://mododesigngroup.com/lib/img/logo-iris.png" alt="Arbeidserfaring" />
@@ -47,48 +45,45 @@
                 </div>
             </div>
 
-            <div class="cv-item" >
-                <a href="#" class="logo-container"  title="Utdanning">
-                    <div class="logo-frame">
-                        <div class="overlay"></div>
-                        <img class="logo-img" src="http://mododesigngroup.com/lib/img/logo-greenhomeguide.png" alt="Utdanning" />
-                    </div>
-                </a>
-
-                <div class="info">
-                    <i class="logo-arrow"></i>
-                    <h3>Utdanning</h3>
-                    <p>UiO, Hibu</p>
-                    <div class="button-group">
-                        <a class="button" href="/case-study/greenhomeguide" title="View GreenHomeGuide case study">Utdanning</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cv-item">
-                <a href="#" class="logo-container"  title="Kompetanse">
-                    <div class="logo-frame">
-                        <div class="overlay"></div>
-                        <img class="logo-img" src="http://mododesigngroup.com/lib/img/logo-leeduser.png" alt="Kompetanse" />
-                    </div>
-                </a>
-
-                <div class="info">
-                    <i class="logo-arrow"></i>
-                    <h3>Kompetanse</h3>
-                    <p>HTML, css, javascript</p>
-                    <div class="button-group">
-                        <a class="button" href="/case-study/leeduser" title="Kompetanse">Kompetanse</a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
+
+
+        <div class="container bio" id="experience">
+            <div class="main">
+                <h2>Arbeidserfaring
+                </h2>
+                <p>FINN.no Freelance, Telenor</p>
+                <nav>
+                    <a href="#team-all" class="bio-trigger back">Tilbake</a>
+                    <a href="#education" class="bio-trigger next">Utdanning</a>
+                </nav>
+            </div>
+            <div class="side">
+                <img src="" alt="Kristine Newswanger"/>
+            </div>
+        </div>
+        <div class="container bio" id="education">
+            <div class="main">
+                <h2>Utdanning
+                </h2>
+                <p>FINN.no Freelance, Telenor</p>
+                <nav>
+                    <a href="#team-all" class="bio-trigger back">Tilbake</a>
+                    <a href="#kompetanse" class="bio-trigger next">Kompetanse</a>
+                </nav>
+            </div>
+            <div class="side">
+                <img src="" alt="Kristine Newswanger"/>
+            </div>
+        </div>
+
+
     </div>
-</div>
+
 
 </section>
+
+<script src="<c:url value="/resources/clientscript/cv/script-site.js"/>"></script>
 
 </body>
 </html>
