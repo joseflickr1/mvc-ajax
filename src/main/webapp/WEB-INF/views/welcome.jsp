@@ -37,7 +37,7 @@
 		<li> <a href="?locale=en_us">us</a> |  <a href="?locale=en_gb">gb</a> | <a href="?locale=es_es">es</a> | <a href="?locale=de_de">de</a> </li>
 	</ul>
 	<ul>
-		<li><a href="account">Ajax @Controller Example</a></li>
+		<li><a href="account" onClick="_gaq.push(['_trackEvent', 'Controller', 'Account', 'Create account']);">Ajax @Controller Example</a></li>
 		<li><a href="responsive/page">Responsive page</a></li>
 		<li><a href="responsive/page2">Responsive page2</a></li>
 		<li><a href="responsive/backboneajax">Backbone ajax in progress</a></li>
