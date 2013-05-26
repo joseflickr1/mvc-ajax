@@ -42,6 +42,15 @@
 		<li><a href="responsive/page2">Responsive page2</a></li>
 		<li><a href="responsive/backboneajax">Backbone ajax in progress</a></li>
 	</ul>
+	
+	<button id="button">Please click - Google Analytics</button>
 </div>
+
+<script>
+//Using jQuery Event API v1.3
+$('#button').on('click', function() {
+  ga('send', 'event', 'button', 'click', 'nav-buttons');
+});
+</script>
 </body>
 </html>
