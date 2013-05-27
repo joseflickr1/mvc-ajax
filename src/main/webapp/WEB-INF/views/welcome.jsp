@@ -52,6 +52,7 @@
 		<ul>
 			<li>Documentasjon tegning og miljø</li>
 			<li>Bruker skisse med inkscape</li>
+			<li>Mobil innspill og forretning</li>
 		</ul>
 	</div>
 	<div class="fleft mll">

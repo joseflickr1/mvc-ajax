@@ -22,11 +22,12 @@
 	<button id="button">Please click - Google Analytics</button>
 	
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-	
+
 	<script>
 		//Using jQuery Event API v1.3
 		$('#button').on('click', function() {
-		  ga('send', 'event', 'button', 'click', 'nav-buttons');
+		  console.log("click button ok")	
+		  ga('send', 'event', 'button', 'click', 'nav-buttons', '4');
 		});
 	</script>
 
