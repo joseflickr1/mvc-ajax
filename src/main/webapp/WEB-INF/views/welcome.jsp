@@ -22,6 +22,18 @@
 	  ga('send', 'pageview');
 	
 	</script>
+
+	<style type="text/css">
+		.fleft {
+			float: left;
+		}
+		.mal {
+			margin: 10px;
+		}
+		.mll {
+			margin-left: 10px;
+		}
+	</style>
 	
 </head>
 <body>
@@ -36,14 +48,39 @@
 	<ul>
 		<li> <a href="?locale=en_us">us</a> |  <a href="?locale=en_gb">gb</a> | <a href="?locale=es_es">es</a> | <a href="?locale=de_de">de</a> </li>
 	</ul>
-	<ul>
-		<li><a href="account" onClick="_gaq.push(['_trackEvent', 'Controller', 'Account', 'Create account']);">Ajax @Controller Example</a></li>
-		<li><a href="responsive/page">Responsive page</a></li>
-		<li><a href="responsive/page2">Responsive page2</a></li>
-		<li><a href="responsive/d3j">d3j</a></li>
-		<li><a href="responsive/ga">Google Analytics</a></li>
-	</ul>
-	
+	<div class="fleft">
+		<ul>
+			<li>Documentasjon tegning og miljø</li>
+			<li>Bruker skisse med inkscape</li>
+		</ul>
+	</div>
+	<div class="fleft mll">
+		<ul>
+			<li>Appgrunt</li>
+			<li>Firefox mobile - test ut her</li>
+			<li><a href="responsive/page">Design css tuts</a></li>
+			<li><a href="responsive/page2">Design - jcp design</a></li>
+		</ul>
+	</div>
+	<div class="fleft mll">
+		<ul>
+			<li>Magneto - forstå payment</li>
+			<li>Ez5 - plugin</li>
+			<li>Enonic - plugin</li>
+		</ul>
+	</div>
+	<div class="fleft mll">
+		<ul>
+			<li><a href="responsive/ga">Google Analytics</a></li>
+			<li><a href="responsive/d3j">d3j</a></li>
+		</ul>
+	</div>
+	<div class="fleft mll">
+		<ul>
+			<li><a href="account">Ajax @Controller Example</a></li>
+		</ul>
+	</div>
+		
 	
 </div>
 
