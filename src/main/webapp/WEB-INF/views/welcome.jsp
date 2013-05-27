@@ -41,16 +41,11 @@
 		<li><a href="responsive/page">Responsive page</a></li>
 		<li><a href="responsive/page2">Responsive page2</a></li>
 		<li><a href="responsive/d3j">d3j</a></li>
+		<li><a href="responsive/ga">Google Analytics</a></li>
 	</ul>
 	
-	<button id="button">Please click - Google Analytics</button>
+	
 </div>
 
-<script>
-//Using jQuery Event API v1.3
-$('#button').on('click', function() {
-  ga('send', 'event', 'button', 'click', 'nav-buttons');
-});
-</script>
 </body>
 </html>

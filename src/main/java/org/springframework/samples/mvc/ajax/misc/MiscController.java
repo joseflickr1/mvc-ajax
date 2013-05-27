@@ -22,5 +22,9 @@ public class MiscController {
     public String d3j() {
         return "d3j/index";
     }
+    @RequestMapping(value="/ga", method = RequestMethod.GET)
+    public String ga() {
+        return "ga/index";
+    }
 
 }
