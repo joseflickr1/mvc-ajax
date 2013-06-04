@@ -18,11 +18,17 @@
 
 <body>
 	<h1>GA example</h1>
-	
-	<button id="button">Please click - Google Analytics</button>
-	
+
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
+
+
+    
+
+
+
+	
+	<button id="button">Please click - Google Analytics</button>
 	<script>
 		//Using jQuery Event API v1.3
 		$('#button').on('click', function() {
