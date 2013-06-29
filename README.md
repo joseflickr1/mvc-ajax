@@ -1,3 +1,7 @@
-Se Heroku mvc-ajax og dokumentasjon</br>
-Kjør app  </br>
-java -jar target/dependency/jetty-runner.jar target/*.war
+<h1>Spring mvc og annet</h1>
+
+TODO: se gjennom og rydde
+
+1. Se Heroku mvc-ajax og dokumentasjon
+2. Start app
+	* java -jar target/dependency/jetty-runner.jar target/*.war
