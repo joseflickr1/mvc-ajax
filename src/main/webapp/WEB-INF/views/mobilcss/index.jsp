@@ -12,7 +12,7 @@
 		
 		
 		<title>API: Tilgjengelige datasett</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<!-- <link rel="shortcut icon" href="/api/static/images/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" href="/api/static/images/apple-touch-icon.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="/api/static/images/apple-touch-icon-retina.png"> -->
