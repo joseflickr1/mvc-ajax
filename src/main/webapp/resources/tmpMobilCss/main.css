@@ -1,0 +1,703 @@
+@charset 'UTF-8';
+
+
+/* --- reset.css --- */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline; }
+body { line-height: 1; }
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+a img { border: none; }
+/* --- typography.css --- */
+html { font-size: 125%; } body { font-size: 50%; color: #333; }  /* scale default font size to 10 px - must be done in two steps due to a IE6 rounding error. */
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-regular-webfont.woff') format('woff'),
+         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-semibold-webfont.eot');
+    src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibold-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-semibold-webfont.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-italic-webfont.eot');
+    src: url('../fonts/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-italic-webfont.woff') format('woff'),
+         url('../fonts/opensans-italic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans-semibolditalic-webfont.eot');
+    src: url('../fonts/opensans-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans-semibolditalic-webfont.woff') format('woff'),
+         url('../fonts/opensans-semibolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/opensans-semibolditalic-webfont.svg#open_sansbold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/oswald-regular-webfont.eot');
+    src: url('../fonts/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald-regular-webfont.woff') format('woff'),
+         url('../fonts/oswald-regular-webfont.ttf') format('truetype'),
+         url('../fonts/oswald-regular-webfont.svg#oswaldregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/oswald-light-webfont.eot');
+    src: url('../fonts/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald-light-webfont.woff') format('woff'),
+         url('../fonts/oswald-light-webfont.ttf') format('truetype'),
+         url('../fonts/oswald-light-webfont.svg#oswaldlight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/oswald-bold-webfont.eot');
+    src: url('../fonts/oswald-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald-bold-webfont.woff') format('woff'),
+         url('../fonts/oswald-bold-webfont.ttf') format('truetype'),
+         url('../fonts/oswald-bold-webfont.svg#oswaldbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+body { font-family: 'Open Sans','Arial','DejaVu Sans',sans-serif; }
+h1, h2 { font-family: 'Oswald','Calibri','Arial','DejaVu Sans',sans-serif; font-weight: normal; line-height: 1.2; }
+h3, h4, h5, h6 { font-weight: bold; line-height: 1.5; }
+h1 { font-size: 2.5em; margin-bottom: 0.5em; }
+h2 { font-size: 2em; margin-bottom: 0.5em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.4em; }
+h5, h6 { font-size: 1.3em; }
+/*p + h2, p + h3, p + h4, p + h4, p + h6 { margin-top: 1em; }*/
+p { font-size: 1.3em; line-height: 1.5; margin-bottom:1em; color:#333; }
+.summary { font-size: 1.4em; line-height: 1.5; margin: 1em 0; }
+.summary p { font-size: 1em; font-weight: bold; }
+.bodytext h3 { font-size:1.4em; }
+.bodytext h3.nyhetsoverskrift { font-size: 1.8em; }
+.bodytext h4 { font-size:1.3em; }
+a { color: #003892; text-decoration: none; }
+a:visited { color:#003399; }
+a:hover, a.definition:hover, ul.entries.title-links li a.definition:hover{ color: #a53d7c; text-decoration: underline; }
+a:focus { outline: 1px dotted; text-decoration: underline; color: #a53d7c; }
+a:active, a:hover { outline:0; }
+*[tabindex="-1"]:focus { outline:0; }
+h2 a, h3 a, h4 a { text-decoration: none; }
+label { cursor:pointer; }
+em { font-style: italic; }
+.placeholder { color: #aaa; }
+select { font-size: 1.3em; }
+.filter-group label select { font-size: 1em; }
+#heading .metaheader { font-size:1.3em; }
+#heading .stikktittel { font-size:1.3em; }
+#heading h2.less-margin { font-size:1.3em; }
+.stikktittel { color: #333;  margin-bottom: 0; }
+.leteside #siste-nytt .stikktittel { font-size: 1.1em; }
+.leteside #siste-nytt .metadata { font-size: 1em; }
+.table-section h3 { font-size: 1.4em; }
+.summary-listing h4 { font-size: 1.4em; font-weight:normal; }
+ul.entries.title-links li a.definition  {  border-bottom:none; color: #003399; display: inline; }
+/*  STYLESHEET SECTIONS
+    CSS Flags marked with '='
+
+    LAYOUT - grid, kolonner
+    TOPPEN - logo, s?keboks
+    NAVIGATION - omr?demenyen, topp-menyen, global-menyen
+    LISTS - ingresslister, lenkelister
+    TABLES - statistikktabeller og tabellariske lister
+    DIVERSE - skyggekant p? sidene, slider, filtrering 
+...............................................................*/
+
+/* =LAYOUT */
+html { overflow-y: scroll; } /* scrollbar even if it is a short page */
+
+/* place the page in the center of the browser window */
+.sitewrapper { margin: 0 auto; width: 95em; }
+.preloader { padding-right: 20px; background: url(../images/preloader.gif) no-repeat scroll top right; min-height: 16px; }
+.cursor-preloader { cursor:progress;}
+
+/* Styles for the usability links */
+/* Normal skrift */
+body { font-size: 50%; }
+/* Stor skrift */
+body.large { font-size: 75%; }
+body.large .global-links.nav.below {top:80px;}
+/* Ekstra stor skrift */
+body.extra-large { font-size: 100%; }
+body.extra-large .global-links.nav.below {top:105px;}
+
+.last, div.last { margin-right: 0; } /* The last column in a row needs this class. */
+.clear { clear:both; }
+
+/* Sets up basic grid floating and margin. */
+.span-1, .span-2, .span-3, .span-4, .span-5, .span-6, .span-6-1, .span-7, .span-8, .span-9, .span-9-1, .span-10, .span-11, .span-12, .span-13, .span-14, .span-15, .span-16, .span-17, .span-18,
+.span-19, .span-20, .span-21, .span-22, .span-23, .span-24{ float: left;margin-right:1em;overflow:hidden; }
+.span-overflow-visible {overflow:visible;}
+
+/* Use these classes to set the width of a column */
+.span-1 { width:3em; }
+.span-2 { width:7em; }
+.span-3 { width:11em; }
+.span-4 { width:15em; }
+.span-5 { width:19em; }
+.span-6 { width:23em; }
+.span-6-1 { width:24.3em; } /* brukes 1/3 visning  */
+.span-7 { width:27em; }
+.span-8 { width:31em; }
+.span-9 { width:35em; }
+.span-9-1 { width:37em; } /* brukes for 1/2 visning */
+.span-10 { width:39em; }
+.span-11 { width:43em; }
+.span-12 { width:47em; }
+.span-13 { width:51em; }
+.span-14 { width:55em; }
+.span-15 { width:59em; }
+.span-16 { width:63em; }
+.span-17 { width:67em; }
+.span-18 { width:71em; }
+.span-19 { width:75em; }
+.span-20 { width:79em; }
+.span-21 { width:83em; }
+.span-22 { width:87em; }
+.span-23 { width:91em; }
+.span-24 { width:95em;margin-right:0; }
+
+/* =TOPPEN */   
+#header { background: url(top-banner.png) no-repeat scroll center -118px #ececec; border-bottom: 1px solid #dfdfdf; margin-bottom: 1em; min-height: 166px; }
+body.large #header { background: url('/api/static/images/skin/top-banner.png') no-repeat scroll center -73px #eee; }
+body.extra-large #header { background: url('/api/static/images/skin/top-banner.png') no-repeat scroll center -14px #eee; }
+#header.menu-closed { background-color: white; border-bottom: 0; }
+body.large .mega-menu, body.extra-large .mega-menu {  }
+#logo { display:block; float:left; margin: 20px 0 24px 0; }
+body.large #logo { margin: 30px 0 36px 0; }
+body.extra-large #logo { margin: 40px 0 64px 0; }
+#logo img { height: 58px; }
+#search label, #search2 label { position:absolute; left:-9999px; }
+#search input[type='submit'], #search2 input[type='submit'] { background-color:#636363; background-image: none; color:white; text-transform:uppercase; border:0; font-family:'Oswald','Calibri','Arial','DejaVu Sans',sans-serif; font-size: 1.5em; padding: 0.1em 0.6em 0.2em 0.6em; margin-left:0.2em; vertical-align:middle; }
+#search input[type='submit']:hover, #search input[type='submit']:focus { cursor:pointer; color:#636363; background-color:white; } 
+#global-tools { margin: 1.4em 0; float:right; }
+
+#page { 
+	background-color: white; 
+	margin-bottom: 3em; 
+}
+
+/* =CONTENT */  
+a.more-link { font-size: 1.3em; display: block; }
+a.more-link img { padding-right: 0.3em; }
+
+.leteside #content { float: left; }
+.fullskjerm { padding: 20px; display:table; }
+.fullskjerm .table-header { overflow:visible; }
+.fullskjerm .table-content{ overflow:visible; }
+.fullskjerm .table-header #left{ width:90%; }
+.fullskjerm #logo { margin: 0 0 3em 0; float: none; }
+
+#banner-image { margin-bottom: 1em;display:block; }   /* bilde i breddeformat som brukes p? veivisersidene */
+
+/* site-footer */
+#footer { clear:both; overflow: hidden; background: url('../images/footer-bg.png') no-repeat scroll center top #545454; padding: 1.8em 0 2.2em 0; font-family: 'Oswald','Calibri','Arial','DejaVu Sans',sans-serif; text-transform: uppercase; }
+
+/* forside - spesifikke stiler */
+.forside h3 { line-height: 1.2; margin-bottom: 0.3em; }
+.forside .clickable.hover, .forside .verktoy .boks.hover { cursor: pointer; }
+.forside .clickable.hover a, .forside .verktoy .boks.hover a { text-decoration: underline; }
+.forside #main-menu .mega-menu { padding-bottom: 3em; }
+
+.forside .precontent { margin-top: -1.9em; padding-top: 1.9em; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; background-color: #f2f2f2; }
+.forside .forside-topp { width: 95em; margin: 0 auto; }
+.forside-topp h1 { text-align: center; font-size: 1.4em; margin-top: 0.5em; margin-bottom: 2em; font-family: 'Open Sans','Arial','DejaVu Sans',sans-serif; color: #444; }
+.forside-topp h1 .forside-overskrift { font-weight: bold; }
+.clickable-to-dialog-content { display: none; }
+
+/* =NAVIGATION */
+/* felles stiling av navigasjonslister */
+ul.nav { list-style-type: none; }
+ul.nav li a { text-decoration: none; }
+
+/* global-meny */
+.global-links.nav { text-transform: uppercase; font-size:1.4em; }
+.global-links.nav li { display: inline; }
+.global-links.nav > li { display: block; float: left; line-height: 1.4; border-bottom: 1px solid #aaa; margin-left: 1em; }
+.global-links.nav > li.selected { border-bottom: 0; }
+.global-links #skip-to-content a { position:absolute; left:-9999px; }
+.global-links #skip-to-content a:focus, .global-links #skip-to-content a:active { position: static; left: 0; width: auto; height: auto; overflow: visible; text-decoration: underline; }
+.global-links.content { line-height: 1.9em; margin-right:0.2em; }
+.global-links.content a.selected { font-weight: bold; }
+.global-links .shortcut { font-family: 'Oswald','Calibri','Arial','DejaVu Sans',sans-serif; }
+
+.global-links.nav.below { color:#000000; font-size:1.0em; float:none; line-height: 2.2em; }
+.global-links.nav.below li a { color: #000; }
+.global-links.nav.below li a.selected { font-weight: bold; }
+.global-links.nav.below li img { vertical-align: sub; margin-right: 0.4em; }
+
+#global-tools form { margin-right: 1em; }
+
+/* topp-menyen */
+#topmenu { background-color:#f1efe0; height:2.6em; padding-top:0.2em; overflow:visible;}
+#site.nav {  float: left; height:2.6em; border-bottom:1px solid #808080;}
+#site.nav li { float:left;text-align: center; }
+#site-nav-first-item { margin-right: 0em; }
+#site.nav a:hover { background-color: #fff; }
+#site.nav li a { color: #333; display: block;font-size: 1.2em;font-weight:bold;white-space: nowrap; padding:0.6em 1em 0.4em 1em;height:1.15em; }
+#site.nav li.active { background-color: #fff;  border-left:1px solid #808080; border-right:1px solid #808080; border-top:1px solid #808080; margin-bottom:-1px;}
+#site.nav li.active a { padding-top: 0.5em; height:1.25em;}
+#site.nav li.active a:hover { padding-top: 0.5em; }
+#site.nav li.back-link { width: 19em; text-align: left; overflow:hidden; }
+#site.nav li.back-link:hover { background-color: #ffffff; }
+#site.nav li.back-link span { color: #8dbb2b; font-size: 1.7em; float:left; padding: 0.3em 0 0.4em 0.3em;height:0.85em; } /*top: 0.1em, no vertical-align*/
+#site.nav li.back-link a { width: 12em; color: #333333; padding:0.6em 0.5em 0.45em 0.5em; height:1.15em;float:left;}
+
+/* navigasjonsstien (br?dsmulestien) */
+#navigation-path { margin-bottom: 3em; overflow: hidden; }
+#navigation-path .nav { overflow: hidden; }
+#navigation-path .nav li { float:left;margin-right:0.5em;font-size:1.3em;line-height:1.3em; }
+#navigation-path .nav li a { line-height: 1.3em; text-decoration:underline; }
+#navigation-path .nav li a:hover { color: #a53d7c; } 
+#navigation-path .nav li a:after { color: #000; }
+#breadcrumbs { float: left; width: 90em; }
+#print-page { display: none; float: right; }
+
+/* =LISTS */
+/* =TABLES */
+
+/* felles for alle tabeller */
+table { width: 100%; border-collapse:collapse; }
+thead { background-color: #d4d4d4; }
+tbody tr { background-color: #ffffff; }
+tbody tr.odd { background-color: #f5f5f5; }
+tbody tr:hover, tbody tr.odd:hover { background-color: #ececec; }
+th { font-weight: normal; }
+td { vertical-align: top; }
+td, th { padding: 0.4em 1em; }
+table a { text-decoration: none; }
+.table-content { overflow: auto; }
+.table-header { overflow: hidden; }
+.table-header h3 { margin-bottom: 0.5em; }
+.table-header #select-table { width: 40%; float: left; }
+.table-header #right { width: 40%; float: right; text-align: right; margin-bottom:0;}
+.table-header #left { width: 40%; float: left; text-align: left; }
+.table-footer {margin: 0.5em 0; } 
+.table-footer a.standardtegn { font-size:1.2em; }
+.table-footer span { margin: 1em 0em; }
+
+/* spesifikk header styling ettersom tabelltype */
+.table-attachment .table-header h3 { padding-top: 12px; }
+.table-attachment .table-header #left { width: 60%; }
+
+/* lister p? tabellarisk format */
+table.list { margin-bottom: 2em; }
+table.list caption { position: absolute; left: -9999px; color: white; }
+/*table.list thead th:hover { background-color:  #cae3f1; }*/
+table.list td, table.list th { font-size: 1.2em; line-height: 1.1; padding: 0.8em 0.833em; border-left: 1px solid #ccc; border-bottom: 1px solid #ccc; vertical-align: top; }
+table.list thead { font-size: 1.167em; background-color: #ccc; }
+table.list thead th { padding: 0.75em; border-left: 1px solid white; border-bottom: 0;}
+table.list thead th:first-child { border-left: 0; }
+table.list tbody tr:first-child > * { border-top-color: white; }
+table.list tbody td:first-child, table.list tbody tr:first-child { border-left: 0; }
+table.list tr.odd { background-color: transparent; }
+table.list tr:hover, table.list tr.odd:hover { background-color: #eee; }
+table.list thead tr:hover { background-color: transparent; }
+table.list a { text-decoration: underline; }
+
+
+/* =DIVERSE */
+.hide { display: none; }
+.container { overflow: hidden; margin-bottom: 1em; }
+.append-bottom  { margin-bottom: 1em; }
+.clearboth { clear:both; }
+.empty { clear:both; height:0px; }
+.underline { text-decoration: underline; }
+sup, sub { height: 0; line-height: 1; font-size: 0.7em; vertical-align: baseline;position: relative; }
+sup { bottom: .8ex; }
+sub { top: .4ex;}
+h1 sup, h2 sup { top: -1em; font-size: 0.5em; margin-left: 0.1em; }
+h1 sub, h2 sub { bottom: 0.5em; font-size: 0.5em; margin-left: 0.1em; }
+.bold { font-weight:bold; }
+div.border { border: 1px solid #808080; overflow: hidden; padding: 1em 0 1em 1em; margin-bottom: 3em; margin-top: 1em; }
+.empty { padding: 0 0.85em; }
+h2.section-style { line-height:1.8em;margin-bottom:0.3em; }
+
+/* advarsel bokser */
+.warning { background: url('../images/icon-warning.png') no-repeat scroll 1em 1em #f2ecb7; border-top: 1px solid #ccc; padding: 0.7em 1em 0.7em 3.5em; margin-bottom: 2em; min-height: 2.5em; }
+.warning p { margin: 0; }
+.warning a { text-decoration: underline; }
+/* advarsel boks - om statistikken */
+.warning.stat { line-height: 1.2em; margin-left: 0; margin-right: 0; padding-top: 1em; padding-bottom: 1em; background-color:#fff; color:#000; font-weight:bold; }
+/* advarsel boks - i header */
+.warning.inHeader {  }
+/* advarsel boks innenfor fane */
+.warning.inBody { background: url('../images/icon-info.png') no-repeat scroll 1em 1em #f2f2f2; }
+.warning.inBody span { display: block; }
+/* advarsel boks - p? forsiden */
+.warning.onFrontpage { background-color:#FFFFFF; color: #323232; clear:both; font-weight:bold; border-color: #bc0a0a; margin: 0;}
+.metatekst { background: url('../images/icon-info.png') no-repeat scroll 0.7em 0.7em #d7ede1; border-top: 1px solid #ccc; padding: 0.5em 0.7em 0.5em 2.7em; min-height: 2em; margin-bottom: 2em; }
+/* viktig / prioritert informasjon */
+.priority-message { border-top: 1px dotted #ACACAC; border-bottom: 1px dotted #ACACAC; margin: 1em 0 !important; padding: 0.5em; cursor: help;}
+.priority-message .subtitle { font-size: 0.8em; color: #888888; display:block; }
+.priority-message a {color:#888888; text-decoration:underline; }
+
+/* tidsskrift */
+.tidsskrift-meta { font-size: 0.92em; }
+
+/* kontakter boksen */
+#contacts h2 .heading-text { padding-right: 1.8em; background: url(../images/icon-envelope.png) no-repeat scroll right 0.3em transparent; }
+#contacts ul { list-style: none outside none; }
+#contacts ul li { margin-top:1em; border-bottom: 1px dotted #888; padding-bottom: 0.4em; }
+#contacts p { margin-bottom: 0; }
+#contacts .name { font-weight: bold; }
+#contacts a { text-decoration: underline; }
+
+/* feilside */
+#error-page { margin-top: 2em; }
+
+
+#main-menu { clear:both; border-top: 1px solid #aaa; position:relative; }
+#main-menu-top { overflow:hidden; }
+#main-menu li { float:left; }
+#main-menu .top-level { background: url('../images/main-menu-caret.png') no-repeat scroll left 1.4em transparent; }
+#main-menu .top-level.selected, #main-menu .top-level.hover { background-image: url('../images/main-menu-caret-selected.png'); }
+#main-menu .top-level > a, #main-menu .top-level.selected > span { font-family: 'Oswald','Calibri','Arial','DejaVu Sans',sans-serif; font-weight: normal; color: #444; display: block; font-size: 2.2em; padding: 0.5em 0 1.32em 1.2em; text-transform: uppercase; }
+#main-menu .top-level > a:hover, #main-menu .top-level.selected > a, #main-menu .top-level.selected > span { color: #a53d7c; outline: 0; }
+#main-menu .top-level > a:focus { outline: 0; text-decoration: underline; }
+#main-menu .top-level { position: absolute; top: 0; }
+#main-menu .statistikk { position: static; }
+#main-menu .mega-menu-toggle { background: none no-repeat scroll left bottom transparent; }
+#main-menu .mega-menu-toggle:hover, #main-menu .mega-menu-toggle:focus, #main-menu .top-level.open .mega-menu-toggle { background-image: url('../images/mega-menu-teaser-arrow.png'); }
+#main-menu .top-level.selected .mega-menu-toggle:hover, #main-menu .top-level.selected .mega-menu-toggle:focus, #main-menu .top-level.selected.open .mega-menu-toggle { background-image: url('../images/mega-menu-teaser-arrow-active.png'); }
+#main-menu .statistikk .mega-menu-toggle { background-position: 3.25em bottom; }
+#main-menu .forskning .mega-menu-toggle { background-position: 3em bottom; }
+#main-menu .omssb .mega-menu-toggle { background-position: 2.5em bottom; }
+body.large #main-menu .mega-menu-toggle { background-position: 2em 74px; }
+body.extra-large #main-menu .mega-menu-toggle { background-position: 2em 93px; }
+#main-menu .statistikk { width:95em; }
+#main-menu .forskning { left:20.5em; width:74.5em; }
+#main-menu .innrapportering { left:41em; width:54em; }
+#main-menu .omssb { left:68em; width:27em; }
+#main-menu .mittssb { right:0; }
+#main-menu .en .forskning { left:16.4em; width:78.6em; }
+#main-menu .en .innrapportering { left:31.5em; width:63.5em; }
+#main-menu .en .omssb { left:53.6em; width:41.4em; }
+#main-menu .en .mittssb { right:0; }
+#main-menu .en .top-level > a { padding-left:1em; }
+#main-menu .statistikk { position: static; }
+#main-menu .mega-menu { position: static; /*Will become absolute on page load using JavaScript*/ left: -9999px; width: 95em; padding: 1em 0 2em 1em; overflow: hidden; }
+#main-menu .mega-menu .column { float: left; width: 30em; margin-left: 2.5em; }
+#main-menu .mega-menu .column.first { margin-left: 0; }
+#main-menu .mega-menu .kolonneoverskrift { font-size: 1.4em; margin-left: -0.6em; font-weight: bold; /*color: #A53D7C;*/ text-transform: uppercase; }
+#main-menu .mega-menu li { float: none; list-style: none outside none; }
+#main-menu .mega-menu a, #main-menu .mega-menu span { display: block; font-family: 'Open Sans','Arial','DejaVu Sans',sans-serif; font-size: 1.4em; color: #333; }
+#main-menu .mega-menu a:hover, #main-menu .mega-menu a:focus { text-decoration: underline; outline: 0; }
+#main-menu .mega-menu .topic { overflow: hidden; margin-left: -1em; border-bottom: 1px solid #ececec; position: relative; }
+#main-menu .topic.hover, #main-menu .topic.open { border-color: #ccc; }
+#main-menu .mega-menu .topic-link { float: left; display: block; padding: 0.6em 0 0.6em 1.8em; width: 13em; background: url('../images/menyikoner-sprite.png') no-repeat scroll left 7px transparent; }
+#main-menu .path .topic-link { font-weight: bold; }
+#main-menu .active .topic-link, #main-menu .subtopics .path span, #main-menu .topic.active .topic-link .text { font-weight: bold; color: #a53d7c; }
+#main-menu .mega-menu .topic-link .text { font-size: 1em; }
+#main-menu .topic.parent .topic-link .text {  display: inline; padding-right: 1em; background: url('../images/subtopics-open-status-arrows.png') no-repeat scroll right 0.5em transparent; }
+#main-menu .topic.parent.open .topic-link .text { background-position: right -94px; }
+/* logo-sprites (forskyvning ca. hver 100 piksler vertikalt */
+#main-menu .mega-menu .pengepung .topic-link { background-position: 0 -94px; }
+#main-menu .mega-menu .myntstabler .topic-link { background-position: 0 -194px; }
+#main-menu .mega-menu .ringperm .topic-link { background-position: -1px -294px; }
+#main-menu .mega-menu .menneskegruppe .topic-link { background-position: 0 -395px; }
+#main-menu .mega-menu .hus .topic-link { background-position: 0 -495px; }
+#main-menu .mega-menu .fabrikk .topic-link { background-position: 0 -595px; }
+#main-menu .mega-menu .helsekors .topic-link { background-position: 0 -694px; }
+#main-menu .mega-menu .kredittkort .topic-link { background-position: 0 -794px; }
+#main-menu .mega-menu .pass .topic-link { background-position: -1px -894px; }
+#main-menu .mega-menu .ku .topic-link { background-position: 0 -993px; }
+#main-menu .mega-menu .sol .topic-link { background-position: 0 -1094px; }
+#main-menu .mega-menu .soylediagram .topic-link { background-position: 0 -1195px; }
+#main-menu .mega-menu .blad .topic-link { background-position: -1px -1295px; }
+#main-menu .mega-menu .riksvapen .topic-link { background-position: 2px -1394px; }
+#main-menu .mega-menu .etikett .topic-link { background-position: 0 -1494px; }
+#main-menu .mega-menu .paragraftegn .topic-link { background-position: -3px -1594px; }
+#main-menu .mega-menu .isbjorn .topic-link { background-position: 0 -1692px; }
+#main-menu .mega-menu .lyspaere .topic-link { background-position: 0 -1795px; }
+#main-menu .mega-menu .koffert .topic-link { background-position: 0 -1894px; }
+#main-menu .mega-menu .eple .topic-link { background-position: 0 -1994px; }
+#main-menu .mega-menu .globus .topic-link { background-position: 0 -2094px; }
+#main-menu .mega-menu .valgurne .topic-link { background-position: 0 -2194px; }
+#main-menu .mega-menu .handlekurv .topic-link { background-position: 0 -2295px; }
+#main-menu .mega-menu .fly .topic-link { background-position: 0 -2395px; }
+#main-menu .mega-menu .kalkulator .topic-link { background-position: -2px -2494px; }
+#main-menu .mega-menu .mapper .topic-link { background-position: 0 -2591px; }
+#main-menu .mega-menu .person .topic-link { background-position: 0 -2693px; }
+#main-menu .mega-menu .dokumenter .topic-link { background-position: 0 -2795px; }
+#main-menu .mega-menu .publikasjon .topic-link { background-position: 0 -2894px; }
+#main-menu .mega-menu .sparepaere .topic-link { background-position: -3px -2994px; }
+#main-menu .mega-menu .kalender .topic-link { background-position: 0 -3094px; }
+#main-menu .mega-menu .avis .topic-link { background-position: 0 -3194px; }
+#main-menu .mega-menu .ansattkort .topic-link { background-position: 0 -3292px; }
+#main-menu .mega-menu .konvolutt .topic-link { background-position: 0 -3390px; }
+#main-menu .mega-menu .flytskjema .topic-link { background-position: 0 -3491px; }
+#main-menu .mega-menu .hoyhus .topic-link { background-position: -1px -3594px; }
+#main-menu .mega-menu .jordklode .topic-link { background-position: 0 -3693px; }
+#main-menu .mega-menu .oppslag .topic-link { background-position: 0 -3791px; }
+#main-menu .mega-menu .analyse .topic-link { background-position: 0 -3893px; }
+#main-menu .mega-menu .hengelas .topic-link { background-position: -1px -3994px; }
+#main-menu .mega-menu .handtrykk .topic-link { background-position: 0 -4092px; }
+#main-menu .mega-menu .soyler .topic-link { background-position: 0 -4192px; }
+#main-menu .mega-menu .tannhjul .topic-link { background-position: 0 -4290px; }
+#main-menu .mega-menu .personer .topic-link { background-position: 0 -4393px; }
+#main-menu .mega-menu .ansatt .topic-link { background-position: 0 -4493px; }
+#main-menu .mega-menu .kalender { margin-bottom: 0; } /* overstyre generell CSS arvet fra statistikkalenderen */
+
+#main-menu .subtopics-toggle { position: absolute; left: -9999px; }
+#main-menu .subtopics-toggle:focus, #main-menu .topic.hover .subtopics-toggle { position: static; float: right; outline: none; }
+#main-menu .mega-menu .subtopics-toggle { padding: 0.8em 0 0 0; font-size: 1em; }
+#main-menu .mega-menu .column.last .subtopics-toggle { margin-right: 1em; }
+#main-menu .subtopics-toggle .hide { display: none; }
+#main-menu .path .subtopics-toggle .hide { display: block; }
+#main-menu .path .subtopics-toggle .show { display: none; }
+#main-menu .subtopics-toggle .show:after { content: ""; }
+#main-menu .subtopics-toggle .hide:after { content: ""; }
+#main-menu .subtopics { display: none; clear: both; border-top: 1px solid #ccc; padding: 1em 0; }
+#main-menu .topic.path .subtopics { display: block; }
+#main-menu .mega-menu .subtopics li a, #main-menu .mega-menu .subtopics li span { padding: 0.5em 1em 0.5em 2.1em; font-size: 1.2em; background: url('../images/main-menu-caret-small.png') no-repeat scroll 1em 0.7em transparent; }
+
+#footer ul { line-height: 1; float: right; }
+#footer ul.global-links { float: left; }
+#footer ul.global-links li:first-child { margin-left: 0; }
+#footer li { display: inline; border: 0; margin-left: 2em; border-bottom: 1px solid #aaa; }
+#footer li.selected { border-bottom: 0; }
+#footer li:first-child { margin-left: 0; }
+#footer li a, #footer li span { font-size: 1.5em; color: white; padding: 0; line-height: 1.5; }
+#footer li a, #footer a:hover { text-decoration: none; }
+#footer .social-links li { border: 0; margin-left: 1em; }
+#footer .social-links img { margin-top: 0.1em; }
+
+
+/* jQuery validate feilmeldinger */
+.jquery-validate input.error { display: inline; color: #800; }
+.jquery-validate label.error { display: inline; color: #800; }
+
+/* MY OWN STYLES */
+#tabs a {
+	font-size: 1.3em;
+}
+
+
+#main-menu-top .ssbno {
+    position: static;
+}
+
+#main-menu-top .ssbno {
+    width: 95em;
+}
+
+#main-menu-top .availabledataset {
+    left: 20.5em;
+    width: 74.5em;
+}
+
+#main-menu-top .support {
+    left: 59.0em;
+    width: 44.5em;
+}
+
+.keyword {
+	padding:  0.9em 0em;
+}
+
+.keyword select {
+	width:350px;
+}
+
+.tag {
+	background-color: #f2f2f2;
+	color: #a53d7c;
+	outline: none;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	margin-top: 0.2em;
+	min-height: 15px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.tag_unclickable {
+	cursor: text;
+}
+
+#nokkelord {
+	padding-top: 0.2em;
+	padding-bottom: 0.4em;
+}
+
+.datasettList a {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.datasettbuttons {
+	padding-top: 1em;
+	padding-bottom: 2em;
+}
+.datasettbutton {
+    background: url("../images/button-gradient-31px.png") repeat-x scroll left bottom white;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    font-size: 1.3em;
+    padding: 0.4em 0.7em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;	
+	color: #000000;
+}
+
+.chooseType {
+	table-layout:fixed;
+	width:75px;
+	overflow:hidden;
+	word-wrap:break-word;
+}
+.block {
+	margin-bottom: 1em;
+}
+
+#list-datasett {
+	font-size: 1.3em;
+}
+
+*/
+/* CREATE/EDIT FORMS AND SHOW PAGES */
+
+fieldset,
+.property-list {
+	position: relative;
+	zoom: 1;
+	border: none;
+}
+
+.property-list .fieldcontain {
+	list-style: none;
+	overflow: hidden;
+	zoom: 1;
+	font-size: 1.3em;
+}
+
+.fieldcontain {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.fieldcontain label,
+.fieldcontain .property-label {
+	color: #666666;
+	text-align: left;
+	width: 20%;
+}
+
+.fieldcontain .property-label {
+	float: left;
+	font-weight: bold;
+}
+
+.fieldcontain .property-value {
+	display: block;
+	margin-bottom: 0.2em;
+	margin-left: 20%;
+}
+
+table.variabler {
+ 	font-size: 1.2em;
+}
+
+table.variabler thead {
+	background-color: #c9c9c9;
+}
+
+table.variabler th {
+	border-left-style: solid;
+	border-left-width: thin;
+	border-right-style: solid;
+	border-right-width: thin;
+	border-color: #ffffff;
+}
+
+table.variabler td {
+	border-style: solid;
+	border-width: thin;
+	border-color: #c9c9c9;
+}
+
+table.variabler td#last, table.variabler th#last{
+	border-right-width: 0;
+	border-right-style: none;
+}
+
+table.variabler td#first, table.variabler th#first  {
+	border-left-width: 0;
+	border-left-style: none;
+	width: 30%;
+}
+
+#leftside {
+    float: left;
+    margin: 2em 3em 0 0;
+    overflow: hidden;
+    width: 61em;
+}
+
+#rightside {
+    float: right;
+    width: 31em;
+    margin-top: 2em;
+}
+
+.contacts h1 {
+    border-bottom: 1px dotted #888888;
+	
+}
+.contacts h1 .heading-text {
+    background: url("../images/icon-envelope.png") no-repeat scroll right 0.5em transparent;
+    padding-right: 1.2em;
+    color: #3E8601;
+}
+
+.contacts .name {
+    font-weight: bold;
+}
+.contacts p {
+    margin-bottom: 0;
+}
+.contacts a {
+    text-decoration: underline;
+}
+.contacts ul {
+    list-style: none outside none;
+}
+.contacts ul li {
+    border-bottom: 1px dotted #888888;
+    margin-top: 1em;
+    padding-bottom: 0.4em;
+}
+.variableListContainer {
+	max-height:40em;
+	overflow:auto;
+}
